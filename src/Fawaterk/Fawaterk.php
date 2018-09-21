@@ -143,8 +143,15 @@ class Fawaterk
             'currency'      => $this->currency
         ];
 
-        $requestHandler = new \Fawaterk\Request\HttpRequestHandler;
+        $requestHandler = new HttpRequestHandler;
 
-        return $requestHandler->send( $data );
+        $response = $requestHandler->send( $data );
+
+        if ( property_exists( $response, 'url' ) )
+        {
+            return $response->url;
+        }
+
+        throw new \Exception("Invalid Response! " . $response);
     }
 }
