@@ -89,3 +89,9 @@ $invoiceUrl = $fawaterk->getInvoiceUrl();
 header("Location: {$invoiceUrl}");
 ```
 
+---
+
+# Upcoming features ( soon )
+
+- More Currencies
+- Taxes
